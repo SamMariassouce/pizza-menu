@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './index.css';
 
 const pizzaData = [
   {
@@ -48,27 +49,59 @@ const pizzaData = [
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <Menu />
       <Footer />
     </div>
   );
 }
-
-function Header() {
-  return <h1>Fast React Pizza Co.</h1>;
-}
 function Menu() {
   return (
-    <div>
+    <main className="menu">
       <h2>Our menu</h2>
-      <Pizza />
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <Pizza
+        name="pizza spinaci"
+        ingredients="Tomato mozarella"
+        img="pizzas/spinaci.jpg"
+        price={10}
+      />
+
+      <Pizza
+        name="pizza funghi"
+        ingredients="Tomato mushrooms"
+        img="pizzas/funghi.jpg"
+        price={12}
+      />
+    </main>
+  );
+}
+
+function Pizza(props) {
+  //console.log(props);
+  return (
+    <div className="pizza">
+      <img src={props.img} alt={props.name} />
+      <div>
+        <h3>{props.name}</h3>
+        <p>{props.ingredients}</p>
+        <span>Price:${props.price + 3}</span>
+      </div>
     </div>
   );
+}
+
+function Header() {
+  //const style = { color: 'red', fontSize: '50px', textTransform: 'uppercase' };
+  return (
+    <header className="header footer">
+      <h1>Fast React Pizza Co.</h1>;
+    </header>
+  );
+
+  /*     <h1 style={style} className="header">
+      Fast React Pizza Co.
+    </h1> */
 }
 
 function Footer() {
@@ -81,19 +114,11 @@ function Footer() {
   //if (hour >= openHour && hour <= closeHour) alert('We are currently open');
   //else alert('sorry we are closed');
   return (
-    <footer>{new Date().toLocaleTimeString()}. We are currently open</footer>
+    <footer className="footer">
+      {new Date().toLocaleTimeString()}. We are currently open
+    </footer>
   );
   // return React.createElement('footer', null, 'we are open');
-}
-
-function Pizza() {
-  return (
-    <div>
-      <img src="pizzas/spinaci.jpg" alt="Pizza" />
-      <h2>Pizza spinaci</h2>
-      <p>Tomato mozarella</p>
-    </div>
-  );
 }
 
 // React version 18
