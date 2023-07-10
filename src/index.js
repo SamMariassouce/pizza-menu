@@ -5,43 +5,43 @@ import './index.css';
 const pizzaData = [
   {
     name: 'Focaccia',
-    ingredients: 'Bread with italian olive oil and rosemary',
-    price: 1250,
+    ingredients: 'Pain au romarin',
+    price: 560,
     photoName: 'pizzas/focaccia.jpg',
     soldOut: false,
   },
   {
     name: 'Pizza Margherita',
-    ingredients: 'Tomato and mozarella',
+    ingredients: 'Tomate and mozarella',
     price: 1450,
     photoName: 'pizzas/margherita.jpg',
     soldOut: false,
   },
   {
     name: 'Pizza Spinaci',
-    ingredients: 'Tomato, mozarella, spinach, and ricotta cheese',
-    price: 1200,
+    ingredients: 'Tomate, mozarella, épinard, et fromage Ricotta',
+    price: 1390,
     photoName: 'pizzas/spinaci.jpg',
     soldOut: false,
   },
   {
     name: 'Pizza Funghi',
-    ingredients: 'Tomato, mozarella, mushrooms, and onion',
-    price: 12,
+    ingredients: 'Tomate, mozarella, champignons et onions',
+    price: 1850,
     photoName: 'pizzas/funghi.jpg',
     soldOut: false,
   },
   {
     name: 'Pizza Salamino',
-    ingredients: 'Tomato, mozarella, and pepperoni',
-    price: 15,
+    ingredients: 'Tomate, mozarella, pepperoni',
+    price: 1590,
     photoName: 'pizzas/salamino.jpg',
     soldOut: true,
   },
   {
     name: 'Pizza Prosciutto',
-    ingredients: 'Tomato, mozarella, ham, aragula, and burrata cheese',
-    price: 18,
+    ingredients: 'Tomate, mozarella, jambon, aragula et fromage burrata',
+    price: 1650,
     photoName: 'pizzas/prosciutto.jpg',
     soldOut: false,
   },
@@ -60,7 +60,7 @@ function Menu() {
   const pizzas = pizzaData;
   return (
     <main className="menu">
-      <h2>Notre menu</h2>
+      <h2> menu</h2>
 
       {pizzas && (
         <ul className="pizzas">
@@ -106,6 +106,8 @@ function Header() {
   return (
     <header className="header footer">
       <h1>La Pizzaeria</h1>
+      <p className="tel">Rond point Jacques Chirac, Papeete</p>
+      <p className="tel">Tel: 40 40 40 40</p>
     </header>
   );
 
@@ -128,9 +130,10 @@ function Footer() {
       {isOpen && (
         <div className="order">
           <p>
-            We are open until {closeHour}:00. Come visit us or order online.
+            Nous sommes ouvert jusqu'à {closeHour}:00. Passez à la Pizzaeria ou
+            commandez en ligne.
           </p>
-          <button className="btn">Order</button>
+          <button className="btn">Commander</button>
         </div>
       )}
     </footer>
