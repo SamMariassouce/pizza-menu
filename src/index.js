@@ -6,21 +6,21 @@ const pizzaData = [
   {
     name: 'Focaccia',
     ingredients: 'Bread with italian olive oil and rosemary',
-    price: 6,
+    price: 1250,
     photoName: 'pizzas/focaccia.jpg',
     soldOut: false,
   },
   {
     name: 'Pizza Margherita',
     ingredients: 'Tomato and mozarella',
-    price: 10,
+    price: 1450,
     photoName: 'pizzas/margherita.jpg',
     soldOut: false,
   },
   {
     name: 'Pizza Spinaci',
     ingredients: 'Tomato, mozarella, spinach, and ricotta cheese',
-    price: 12,
+    price: 1200,
     photoName: 'pizzas/spinaci.jpg',
     soldOut: false,
   },
@@ -60,7 +60,7 @@ function Menu() {
   const pizzas = pizzaData;
   return (
     <main className="menu">
-      <h2>Our menu</h2>
+      <h2>Notre menu</h2>
 
       {pizzas && (
         <ul className="pizzas">
@@ -95,7 +95,7 @@ function Pizza(props) {
       <div>
         <h3>{props.pizzaObj.name}</h3>
         <p>{props.pizzaObj.ingredients}</p>
-        <span>Price:${props.pizzaObj.price + 3}</span>
+        <span>Prix: {props.pizzaObj.price} cfp</span>
       </div>
     </li>
   );
@@ -105,7 +105,7 @@ function Header() {
   //const style = { color: 'red', fontSize: '50px', textTransform: 'uppercase' };
   return (
     <header className="header footer">
-      <h1>Fast React Pizza Co.</h1>;
+      <h1>La Pizzaeria</h1>
     </header>
   );
 
