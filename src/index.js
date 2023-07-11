@@ -107,15 +107,20 @@ function Menu() {
 function Pizza({ pizzaObj }) {
   //console.log(pizzaObj);
 
-  if (pizzaObj.soldOut) return null;
+  //if (pizzaObj.soldOut) return null;
 
   return (
-    <li className="pizza">
+    <li className={`pizza ${pizzaObj.soldOut ? 'sold-out' : ''}`}>
       <img src={pizzaObj.photoName} alt={pizzaObj.name} />
       <div>
         <h3>{pizzaObj.name}</h3>
         <p>{pizzaObj.ingredients}</p>
-        <span>Prix: {pizzaObj.price} cfp</span>
+
+        {pizzaObj.soldOut ? (
+          <span>Plus de stock</span>
+        ) : (
+          <span>Prix: {pizzaObj.price} cfp</span>
+        )}
       </div>
     </li>
   );
