@@ -58,16 +58,20 @@ function App() {
 }
 function Menu() {
   const pizzas = pizzaData;
+  //const pizzas = [];
+  const numPizzas = pizzas.length;
   return (
     <main className="menu">
       <h2> menu</h2>
 
-      {pizzas && (
+      {numPizzas > 0 ? (
         <ul className="pizzas">
           {pizzaData.map((pizza) => (
             <Pizza pizzaObj={pizza} key={pizza.name} />
           ))}
         </ul>
+      ) : (
+        <p>Nous travaillons sur notre menu, svp revenez plus tard.</p>
       )}
 
       {/* <Pizza
